@@ -45,22 +45,21 @@ def sendResults(highestFirstName, highestSurname, maximum):
     print("The top mark was", maximum, "by", highestFirstName, highestSurname)
 
 #Function to make a new file with their results
-def newFile(firstName, surname, examMarks):
+def newFile(highestFirstName, highestSurname, maximium):
     #Creates the new file
-    f = open("NewFileResults.txt", "w")
+  f = open("NewFileResults.txt", "w")
 
-    #Fixed loop, loops 50 times
-    for index in range(50):
-        
-        #Variable for the information to enter into the file
-        fileInput = firstName[index] + " " + surname[index] + "has a score of " + str(examMarks[index])
+          #Variable for the information to enter into the file 
+  fileInput = f"{highestFirstName} {highestSurname} has a score of {str(maximum)}"
 
-        #Writes to the new file and takes a new line
-        f.write(fileInput + "\n")
+      
+
+  #Writes to the new file and takes a new line
+  f.write(fileInput)
 #End of new file function
 
 #Runs entire program
 examMarks, firstName, surname = readFile()
 highestFirstName, highestSurname, maximum = highestMark(examMarks, firstName, surname)
 sendResults(highestFirstName, highestSurname, maximum)
-newFile(firstName, surname, examMarks)
+newFile(highestFirstName, highestSurname, maximum)
