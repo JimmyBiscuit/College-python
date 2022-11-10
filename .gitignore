@@ -6,3 +6,5 @@ bin
 pyvenv.cfg
 demo files/studentmarks.py
 .idea
+.replit
+venv
